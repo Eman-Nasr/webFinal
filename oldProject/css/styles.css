@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #2c3e50; /* Updated darker background color */
+    padding-top: 70px;
+    transition: width 0.3s ease; /* Smooth transition for width changes */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    z-index: 1000; /* Ensure sidebar appears above other content */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    border-top-right-radius: 10px; /* Rounded top-right corner */
+    border-bottom-right-radius: 10px; /* Rounded bottom-right corner */
+}
+
+.sidebar:hover {
+    width: 250px; /* Expand width on hover */
+}
+
+.sidebar h3 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px; /* Increase font size */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center-align the list items */
+}
+
+.sidebar li {
+    padding: 10px 20px;
+    border-radius: 5px; /* Add border radius */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    margin-bottom: 5px; /* Add margin between list items */
+}
+
+.sidebar li:last-child {
+    margin-bottom: 0; /* Remove margin from last list item */
+}
+
+.sidebar a {
+    color: #ecf0f1; /* Updated text color */
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
+}
+
+.sidebar a:hover {
+    color: #fff; /* Change text color on hover */
+    background-color: #34495e; /* Darken background color on hover */
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.collapse-content ul {
+    padding-left: 20px; /* Indent nested lists */
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition for content movement */
+}
+
+.content h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Existing styles for the sidebar and collapsed content */
+
+.collapse-content {
+    padding-left: 20px; /* Indent nested lists */
+}
+
+.collapse-content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.collapse-content ul li {
+    padding: 8px 0;
+    transition: background-color 0.3s;
+}
+
+.collapse-content ul li a {
+    color: #ecf0f1; /* Updated text color */
+    text-decoration: none;
+    display: block;
+}
+
+.collapse-content ul li a:hover {
+    color: #fff; /* Change text color on hover */
+    background-color: #34495e; /* Darken background color on hover */
+}
+
+.sidebar h3 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px; /* Increase font size */
+    border-bottom: 1px solid #ccc; /* Add bottom border */
+    padding-bottom: 25px; /* Add padding for spacing */
+}
+
