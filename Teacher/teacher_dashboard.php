@@ -359,6 +359,20 @@ body, html {
     cursor: pointer;
  }
  
+ .footer {
+    padding: 20px 0; /* Adjust padding to increase/decrease space */
+     color: #777; /* Footer text color */
+    text-align: center; /* Centers the footer text */
+     position: relative; /* Ensures footer is placed at the bottom */
+    bottom: 0; /* Aligns footer at the bottom */
+    width: 100%; /* Footer width */
+}
+
+.container {
+    width: 80%; /* Container width */
+    margin: auto; /* Centers the container */
+}
+
 
 @media (max-width: 768px) {
             .dashboard-image-frame {
@@ -398,6 +412,37 @@ body, html {
     }
 }
 
+.description h2 {
+    margin-bottom: 20px; /* Adds space below the heading */
+    color: var(--heading-color); /* Uses the color defined in your :root */
+}
+.description {
+    margin-top: 90px; /* Adjust the value as needed */
+}
+
+
+.description p {
+    line-height: 1.6; /* Improves readability */
+    color: var(--paraText-color); /* Uses the color defined in your :root */
+}
+
+
+.chart-container {
+    width: 120%; /* Adjust width as needed */
+    max-width: 1000px; /* Increase max-width to make the chart wider */
+    height: auto; /* Adjust height as needed, or set a specific height */
+    padding: 20px; /* Adjust or remove padding as needed */
+    border-radius: 10px; /* Add border radius */
+}
+
+
+
+
+/* Ensures the chart is responsive and fits well in its container */
+#classScheduleChart {
+    height: 400px !important; /* Example fixed height */
+}
+
 
     </style>
 </head>
@@ -431,6 +476,7 @@ body, html {
 
     
     <body>
+        
     <div class="container mt-5" style="margin-top: 100px;">
     <div class="row">
         <!-- Left Column for Title and Courses -->
@@ -445,6 +491,8 @@ body, html {
             <p>Total Courses: <?php echo $num_courses; ?></p>
         </div>
     </div>
+
+
     <!-- Logos Row -->
     <div class="mt-5 logos-row">
         <div class="text-center mb-3">
@@ -469,11 +517,32 @@ body, html {
 
 
 
-<div class="chart-container">
-    <canvas id="classScheduleChart" style="height: 500px; width: 100%;"></canvas>
+<div class="container mt-5">
+    <div class="row">
+        <!-- Graph Column: Moved to the right -->
+        <div class="col-lg-7 col-md-7 order-lg-2 order-md-2 ml-md-auto mr-md-0">
+            <div class="chart-container">
+                <canvas id="classScheduleChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Description Column: Remains on the left -->
+        <div class="col-lg-5 col-md-5 order-lg-1 order-md-1 text-center">
+            <div class="description">
+                <h2>Class Schedule Overview</h2>
+                <p>This graph represents the distribution of your teaching hours across the week. It helps in visualizing the time allocated for each course, enabling better time management and planning.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">&copy; 2024 Horizon. All rights reserved.</p>
+    </div>
+</footer>
 
 <script>
 const scheduleCtx = document.getElementById('classScheduleChart').getContext('2d');
@@ -653,6 +722,3 @@ window.onclick = function(event) {
 </script>
 </body>
 </html>
-
-
- 
